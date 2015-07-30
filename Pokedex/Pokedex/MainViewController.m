@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "ContactsManager.h"
+#import "PokemonCellTableViewCell.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -22,10 +23,16 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
 - (id)init {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor = [UIColor redColor];
         
-        ContactsManager *pokemonManager = [ContactsManager sharedManager];
-        _pokemonArray = pokemonManager.pokedexAddressBook;
+//        ContactsManager *pokemonManager = [ContactsManager sharedManager];
+//        _pokemonArray = pokemonManager.pokedexAddressBook;
+        
+        _pokemonArray = @[
+                          @{@"name": @"John Doe"},
+                          @{@"name": @"Erh-li Shen"},
+                          @{@"name": @"Quynh Nguyen"}
+                          ];
     }
     return self;
 }
@@ -43,7 +50,10 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     _pokemonTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _pokemonTableView.dataSource = self;
     _pokemonTableView.delegate = self;
-    [_pokemonTableView registerClass:[PokemonCellTableViewCell class] forCellReuseIdentifier:kPokedexCellReuseId];
+    [_pokemonTableView registerClass:[PokemonCellTableViewCell class]
+              forCellReuseIdentifier:kPokedexCellReuseId];
+    
+    _pokemonTableView.tableFooterView = [[UIView alloc] init];
     
     [self.view addSubview:_pokemonTableView];
 }
@@ -51,7 +61,11 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    _pokemonTableView.frame = self.view.bounds;
+    CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
+    CGRect tableViewRect = CGRectMake(self.view.bounds.origin.x, statusBarSize.height, self.view.bounds.size.width, self.view.bounds.size.height - statusBarSize.height);
+    
+    _pokemonTableView.frame = tableViewRect;
+    _pokemonTableView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,21 +74,29 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
 
 #pragma mark Table View Data Source Methods
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100.0;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_pokemonArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifer = @"CellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    PokemonCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPokedexCellReuseId];
     
     // Using a cell identifier will allow your app to reuse cells as they come and go from the screen.
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        cell = [[PokemonCellTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                               reuseIdentifier:kPokedexCellReuseId];
     }
     
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [_pokemonArray objectAtIndex:row];
+    NSDictionary *pokemonData = _pokemonArray[row];
+    cell.textLabel.text = [pokemonData objectForKey:@"name"];
+    cell.detailTextLabel.text = @"test";
+    cell.heightTextLabel.text = @"100.0";
+    cell.weightTextLabel.text = @"150.0";
     
     return cell;
 }

@@ -10,4 +10,7 @@
 
 @interface PokemonCellTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) UILabel *heightTextLabel;
+@property (strong, nonatomic) UILabel *weightTextLabel;
+
 @end
