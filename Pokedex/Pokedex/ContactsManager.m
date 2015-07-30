@@ -48,7 +48,7 @@ NSString *const kContactAccess = @"contacts_access_granted";
             if (error == nil) {
                 if (granted) {
                     _authorizationStatus = CNAuthorizationStatusAuthorized;
-                    [self loadDeviceContacts];
+                    [self loadPokedex];
                 } else {
                     _authorizationStatus = CNAuthorizationStatusDenied;
                 }
@@ -57,7 +57,7 @@ NSString *const kContactAccess = @"contacts_access_granted";
     }
 }
 
-- (void)loadDeviceContacts
+- (void)loadPokedex
 {
     [_deviceAddressBook removeAllObjects];
     [_pokedexAddressBook removeAllObjects];
