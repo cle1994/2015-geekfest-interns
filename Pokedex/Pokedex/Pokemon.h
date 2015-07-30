@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, assign) CGFloat height;           // height in ft
 @property (nonatomic, assign) CGFloat weight;           // weight in lbs
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *note;
 @property (nonatomic, strong) UIImage *image;
 
 - (id)initWithContact:(CNContact*)contact;

@@ -35,9 +35,10 @@
         NSString *month = [NSString stringWithFormat:@"%ld", contact.birthday.month];
         self.type = [_birthdayToType valueForKey:month];
         if (contact.note) {
-            self.description = contact.note;
+            self.note = contact.note;
         } else {
-            self.description = [_birthdayToDescription valueForKey:month];
+            NSString *description = [_birthdayToDescription valueForKey:month];
+            self.note = description;
         }
         
         if (contact.imageDataAvailable) {
