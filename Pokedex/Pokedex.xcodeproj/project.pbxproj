@@ -16,6 +16,7 @@
 		AA91E0C41B6A9A1100A581D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA91E0C21B6A9A1100A581D7 /* LaunchScreen.xib */; };
 		AA91E0D01B6A9A1200A581D7 /* PokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91E0CF1B6A9A1200A581D7 /* PokedexTests.m */; };
 		AA91E0E11B6A9EBD00A581D7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91E0E01B6A9EBD00A581D7 /* MainViewController.m */; };
+		B2808D5E1B6AD734002375B6 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = B2808D5D1B6AD734002375B6 /* Images */; };
 		C42B7D761B6AAD7C00CAF672 /* PokemonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C42B7D751B6AAD7C00CAF672 /* PokemonCellTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		AA91E0CF1B6A9A1200A581D7 /* PokedexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokedexTests.m; sourceTree = "<group>"; };
 		AA91E0DF1B6A9EBD00A581D7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AA91E0E01B6A9EBD00A581D7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B2808D5D1B6AD734002375B6 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = SOURCE_ROOT; };
 		C42B7D741B6AAD7C00CAF672 /* PokemonCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonCellTableViewCell.h; sourceTree = "<group>"; };
 		C42B7D751B6AAD7C00CAF672 /* PokemonCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonCellTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 		AA91E0B81B6A9A1100A581D7 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				B2808D5D1B6AD734002375B6 /* Images */,
 				AA91E0DA1B6A9C7200A581D7 /* Screens */,
 				5DC64BEC1B6AA22D005F7A79 /* Pokemon.m */,
 				5DC64BEB1B6AA067005F7A79 /* Pokemon.h */,
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA91E0C41B6A9A1100A581D7 /* LaunchScreen.xib in Resources */,
+				B2808D5E1B6AD734002375B6 /* Images in Resources */,
 				AA91E0C11B6A9A1100A581D7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

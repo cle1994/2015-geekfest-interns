@@ -51,6 +51,7 @@
             NSString *imageFilename = [NSString stringWithFormat:@"Images/%@.png", self.type];
             self.image = [UIImage imageNamed:imageFilename];
         }
+        
     }
     return self;
 }
@@ -70,12 +71,12 @@
                                 @"This pokemon can switch off from the world around then and during these periods much more occurs on the deep innermost levels of its psyche, than their closest companions imagine.",
                                 @"Passion, desire and power go hand in hand for this pokemon. Old and wise beyond the average, it often knows all the answers.",
                                 @"This pokemon believes that anything is possible - and because of this belief system, it is adept at seeking out their very own pot of gold at the end of the rainbow."]
-                                                           forKeys:@[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12]];
+                                                           forKeys:@[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"]];
 }
 
 - (void)setUpBirthdayToTypeDictionary {
     _birthdayToType = [[NSDictionary alloc] initWithObjects:@[@"Normal", @"Fire", @"Water", @"Electric", @"Grass", @"Fighting",
                                                               @"Ground", @"Flying", @"Psychic", @"Bug", @"Poison", @"Dragon"]
-                                                    forKeys:@[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12]];
+                                                    forKeys:@[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"]];
 }
 @end
