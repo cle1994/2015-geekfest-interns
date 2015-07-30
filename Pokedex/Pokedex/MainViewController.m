@@ -10,6 +10,7 @@
 #import "ContactsManager.h"
 #import "PokemonCellTableViewCell.h"
 #import "DetailViewController.h"
+#import "Pokemon.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,14 +27,9 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     if (self) {
         self.view.backgroundColor = [UIColor redColor];
         
-//        ContactsManager *pokemonManager = [ContactsManager sharedManager];
-//        _pokemonArray = pokemonManager.pokedexAddressBook;
-        
-        _pokemonArray = @[
-                          @{@"name": @"John Doe"},
-                          @{@"name": @"Erh-li Shen"},
-                          @{@"name": @"Quynh Nguyen"}
-                          ];
+        self.pokemonArray = [[NSMutableArray alloc] init];
+        [[ContactsManager sharedManager] loadPokedex];
+        _pokemonArray = [[ContactsManager sharedManager] pokedexAddressBook];
     }
     return self;
 }
@@ -41,8 +37,7 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGRect contactScreenRect = CGRectMake(screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height * 0.6);
-    self.view.frame = contactScreenRect;
+    self.view.frame = screenRect;
 }
 
 - (void)viewDidLoad {
@@ -94,11 +89,11 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     }
     
     NSUInteger row = [indexPath row];
-    NSDictionary *pokemonData = _pokemonArray[row];
-    cell.textLabel.text = [pokemonData objectForKey:@"name"];
-    cell.detailTextLabel.text = @"test";
-    cell.heightTextLabel.text = @"100.0";
-    cell.weightTextLabel.text = @"150.0";
+    Pokemon *pokemonData = _pokemonArray[row];
+    cell.textLabel.text = pokemonData.name;
+    cell.detailTextLabel.text = pokemonData.type;
+    cell.heightTextLabel.text = [NSString stringWithFormat: @"%.2f", pokemonData.height];
+    cell.weightTextLabel.text = [NSString stringWithFormat: @"%.2f", pokemonData.weight];
     
     return cell;
 }

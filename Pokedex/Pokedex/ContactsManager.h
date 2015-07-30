@@ -16,4 +16,6 @@
 
 + (instancetype)sharedManager;
 - (void)requestAccessToContacts;
+- (void)loadPokedex;
+
 @end

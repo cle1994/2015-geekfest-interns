@@ -10,6 +10,6 @@
 
 @interface MainViewController : UIViewController 
 
-@property (strong, nonatomic) NSArray *pokemonArray;
+@property (strong, nonatomic) NSMutableArray *pokemonArray;
 
 @end
