@@ -28,7 +28,8 @@
         self.number = [[[ContactsManager sharedManager] deviceAddressBook] indexOfObject:contact];
         self.name = [NSString stringWithFormat:@"%@ %@", contact.givenName, contact.familyName];
         self.type = [_birthdayToType valueForKey:[NSString stringWithFormat:@"%ld", contact.birthday.month]];
-        [self setHeightAndWeight];
+        self.height = ((float)rand() / RAND_MAX) * 6;
+        self.weight = ((float)rand() / RAND_MAX) * 150;
         if (contact.note) {
             self.description = contact.note;
         } else {
@@ -38,16 +39,9 @@
     return self;
 }
 
-- (void)setHeightAndWeight{
-    
-}
-- (void)setDescription{
-    
-}
-
 - (void)setUpDictionary {
-    _birthdayToType = [[NSDictionary alloc] initWithObjects:@[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12]
-                                                    forKeys:@[@"Normal", @"Fire", @"Water", @"Electric", @"Grass", @"Fighting",
-                                                              @"Ground", @"Flying", @"Psychic", @"Bug", @"Ghost", @"Dragon"]];
+    _birthdayToType = [[NSDictionary alloc] initWithObjects:@[@"Normal", @"Fire", @"Water", @"Electric", @"Grass", @"Fighting",
+                                                              @"Ground", @"Flying", @"Psychic", @"Bug", @"Ghost", @"Dragon"]
+                                                    forKeys:@[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12]];
 }
 @end
