@@ -6,6 +6,7 @@
 //  Copyright © 2015 geekfest. All rights reserved.
 //
 #import "ContactsManager.h"
+#import "Pokemon.h"
 
 NSString *const kContactAccess = @"contacts_access_granted";
 
@@ -27,8 +28,8 @@ NSString *const kContactAccess = @"contacts_access_granted";
     self = [super init];
     if (self) {
         self.contactStore = [[CNContactStore alloc] init];
-        self.pokedexAddressBook = [[NSArray alloc] init];
         self.deviceAddressBook = [[NSMutableArray alloc] init];
+        self.pokedexAddressBook = [[NSMutableArray alloc] init];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         if ([userDefaults valueForKey:kContactAccess] != nil) {
@@ -47,7 +48,7 @@ NSString *const kContactAccess = @"contacts_access_granted";
             if (error == nil) {
                 if (granted) {
                     _authorizationStatus = CNAuthorizationStatusAuthorized;
-
+                    [self loadPokedex];
                 } else {
                     _authorizationStatus = CNAuthorizationStatusDenied;
                 }
@@ -56,17 +57,17 @@ NSString *const kContactAccess = @"contacts_access_granted";
     }
 }
 
-- (void)loadDeviceContacts
+- (void)loadPokedex
 {
     [_deviceAddressBook removeAllObjects];
+    [_pokedexAddressBook removeAllObjects];
     
-    NSArray *keys = [NSArray arrayWithObjects:CNContactFamilyNameKey, CNContactGivenNameKey, CNContactImageDataKey, CNContactPhoneNumbersKey, CNContactBirthdayKey, CNContactNamePrefixKey, nil];
+    NSArray *keys = [NSArray arrayWithObjects:CNContactFamilyNameKey, CNContactGivenNameKey, CNContactImageDataKey, CNContactPhoneNumbersKey, CNContactBirthdayKey, nil];
     CNContactFetchRequest *fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
     [_contactStore enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact *contact, BOOL *stop) {
         [_deviceAddressBook addObject:contact];
+        [_pokedexAddressBook addObject:[[Pokemon alloc] initWithContact:contact]];
     }];
-    
-    
 }
 @end
 

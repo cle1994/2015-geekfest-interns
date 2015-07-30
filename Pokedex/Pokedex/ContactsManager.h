@@ -11,7 +11,7 @@
 @interface ContactsManager : NSObject
 @property (nonatomic, strong) CNContactStore *contactStore;
 @property (nonatomic, assign) CNAuthorizationStatus authorizationStatus;
-@property (nonatomic, strong) NSArray *pokedexAddressBook;
+@property (nonatomic, strong) NSMutableArray *pokedexAddressBook;
 @property (nonatomic, strong) NSMutableArray *deviceAddressBook;
 
 + (instancetype)sharedManager;

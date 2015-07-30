@@ -13,8 +13,8 @@
 @property (nonatomic, assign) NSUInteger number;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *type;
-@property (nonatomic, assign) CGFloat height;
-@property (nonatomic, assign) CGFloat weight;
+@property (nonatomic, assign) CGFloat height;           // height in ft
+@property (nonatomic, assign) CGFloat weight;           // weight in lbs
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) UIImage *image;
 

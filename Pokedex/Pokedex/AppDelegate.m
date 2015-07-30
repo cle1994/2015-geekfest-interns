@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ContactsManager.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
     _window.rootViewController = _mainViewController;
     _window.backgroundColor = [UIColor redColor];
     [_window makeKeyAndVisible];
+    
+    [[ContactsManager sharedManager] requestAccessToContacts];
     
     return YES;
 }
