@@ -33,6 +33,9 @@
         self.weight = ((float)rand() / RAND_MAX) * 150;
         
         NSString *month = [NSString stringWithFormat:@"%ld", contact.birthday.month];
+        if ([month isEqualToString:@"0"]) {
+            month = [NSString stringWithFormat:@"%ld",(NSInteger)((rand() % 12) + 1)];
+        }
         self.type = [_birthdayToType valueForKey:month];
         if (contact.note) {
             self.note = contact.note;
