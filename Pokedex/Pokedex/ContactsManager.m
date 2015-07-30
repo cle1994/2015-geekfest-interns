@@ -8,10 +8,8 @@
 #import "ContactsManager.h"
 
 NSString *const kContactAccess = @"contacts_access_granted";
-NSString *const kWorkdayAddressBook = @"Workday";
 
 @implementation ContactsManager {
-    NSMutableArray *_deviceAddressBook;
 }
 
 + (instancetype)sharedManager
@@ -29,7 +27,8 @@ NSString *const kWorkdayAddressBook = @"Workday";
     self = [super init];
     if (self) {
         self.contactStore = [[CNContactStore alloc] init];
-        _deviceAddressBook = [[NSMutableArray alloc] init];
+        self.pokedexAddressBook = [[NSArray alloc] init];
+        self.deviceAddressBook = [[NSMutableArray alloc] init];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         if ([userDefaults valueForKey:kContactAccess] != nil) {
@@ -66,6 +65,7 @@ NSString *const kWorkdayAddressBook = @"Workday";
     [_contactStore enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact *contact, BOOL *stop) {
         [_deviceAddressBook addObject:contact];
     }];
+    
     
 }
 @end
