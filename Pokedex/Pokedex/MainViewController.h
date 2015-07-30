@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContactListTableViewController.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController 
 
-@property (strong, nonatomic) ContactListTableViewController *contactList;
+@property (strong, nonatomic) NSArray *pokemonArray;
 
 @end
