@@ -39,6 +39,12 @@
         } else {
             self.description = [_birthdayToDescription valueForKey:month];
         }
+        
+        if (contact.imageDataAvailable) {
+            // convert nsdata to uiimage 8 bit
+        } else {
+            // assign random pokemon
+        }
     }
     return self;
 }

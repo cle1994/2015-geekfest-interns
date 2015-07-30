@@ -28,6 +28,7 @@ NSString *const kContactAccess = @"contacts_access_granted";
     self = [super init];
     if (self) {
         self.contactStore = [[CNContactStore alloc] init];
+        self.deviceAddressBook = [[NSMutableArray alloc] init];
         self.pokedexAddressBook = [[NSMutableArray alloc] init];
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -47,7 +48,7 @@ NSString *const kContactAccess = @"contacts_access_granted";
             if (error == nil) {
                 if (granted) {
                     _authorizationStatus = CNAuthorizationStatusAuthorized;
-                    [self loadPokedex];
+                    [self loadDeviceContacts];
                 } else {
                     _authorizationStatus = CNAuthorizationStatusDenied;
                 }
@@ -56,13 +57,15 @@ NSString *const kContactAccess = @"contacts_access_granted";
     }
 }
 
-- (void)loadPokedex
+- (void)loadDeviceContacts
 {
+    [_deviceAddressBook removeAllObjects];
     [_pokedexAddressBook removeAllObjects];
     
     NSArray *keys = [NSArray arrayWithObjects:CNContactFamilyNameKey, CNContactGivenNameKey, CNContactImageDataKey, CNContactPhoneNumbersKey, CNContactBirthdayKey, nil];
     CNContactFetchRequest *fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
     [_contactStore enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact *contact, BOOL *stop) {
+        [_deviceAddressBook addObject:contact];
         [_pokedexAddressBook addObject:[[Pokemon alloc] initWithContact:contact]];
     }];
 }
