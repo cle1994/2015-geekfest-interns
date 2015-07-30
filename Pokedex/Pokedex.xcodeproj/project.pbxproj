@@ -17,6 +17,7 @@
 		AA91E0D01B6A9A1200A581D7 /* PokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91E0CF1B6A9A1200A581D7 /* PokedexTests.m */; };
 		AA91E0E11B6A9EBD00A581D7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91E0E01B6A9EBD00A581D7 /* MainViewController.m */; };
 		C42B7D761B6AAD7C00CAF672 /* PokemonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C42B7D751B6AAD7C00CAF672 /* PokemonCellTableViewCell.m */; };
+		C42B7D7B1B6ACB7B00CAF672 /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42B7D7A1B6ACB7B00CAF672 /* BattleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		AA91E0E01B6A9EBD00A581D7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		C42B7D741B6AAD7C00CAF672 /* PokemonCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokemonCellTableViewCell.h; sourceTree = "<group>"; };
 		C42B7D751B6AAD7C00CAF672 /* PokemonCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonCellTableViewCell.m; sourceTree = "<group>"; };
+		C42B7D791B6ACB7B00CAF672 /* BattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
+		C42B7D7A1B6ACB7B00CAF672 /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				AA91E0E01B6A9EBD00A581D7 /* MainViewController.m */,
 				AA8408C91B6ABEE400A0851F /* DetailViewController.h */,
 				AA8408CA1B6ABEE400A0851F /* DetailViewController.m */,
+				C42B7D791B6ACB7B00CAF672 /* BattleViewController.h */,
+				C42B7D7A1B6ACB7B00CAF672 /* BattleViewController.m */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				AA91E0BF1B6A9A1100A581D7 /* AppDelegate.m in Sources */,
 				5DC64BED1B6AA22D005F7A79 /* Pokemon.m in Sources */,
 				C42B7D761B6AAD7C00CAF672 /* PokemonCellTableViewCell.m in Sources */,
+				C42B7D7B1B6ACB7B00CAF672 /* BattleViewController.m in Sources */,
 				AA91E0BC1B6A9A1100A581D7 /* main.m in Sources */,
 				5DC64BEA1B6A9BEC005F7A79 /* ContactsManager.m in Sources */,
 				AA8408CB1B6ABEE400A0851F /* DetailViewController.m in Sources */,
@@ -368,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -380,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Pokedex/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

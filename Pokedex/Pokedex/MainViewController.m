@@ -10,6 +10,8 @@
 #import "ContactsManager.h"
 #import "PokemonCellTableViewCell.h"
 #import "DetailViewController.h"
+#import "BattleViewController.h"
+#import "Pokemon.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,14 +28,10 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     if (self) {
         self.view.backgroundColor = [UIColor redColor];
         
-//        ContactsManager *pokemonManager = [ContactsManager sharedManager];
-//        _pokemonArray = pokemonManager.pokedexAddressBook;
-        
-        _pokemonArray = @[
-                          @{@"name": @"John Doe"},
-                          @{@"name": @"Erh-li Shen"},
-                          @{@"name": @"Quynh Nguyen"}
-                          ];
+        //ContactsManager *pokemonManager = [ContactsManager sharedManager];
+        self.pokemonArray = [[NSMutableArray alloc] init];
+        [[ContactsManager sharedManager] loadPokedex];
+        _pokemonArray = [[ContactsManager sharedManager] pokedexAddressBook];
     }
     return self;
 }
@@ -58,6 +56,7 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     
     self.navigationItem.title = @"Pokedex";
     
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, @"Your text");
     [self.view addSubview:_pokemonTableView];
 }
 
@@ -94,9 +93,9 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     }
     
     NSUInteger row = [indexPath row];
-    NSDictionary *pokemonData = _pokemonArray[row];
-    cell.textLabel.text = [pokemonData objectForKey:@"name"];
-    cell.detailTextLabel.text = @"test";
+    Pokemon *pokemonData = _pokemonArray[row];
+    cell.textLabel.text = pokemonData.name;
+    cell.detailTextLabel.text = pokemonData.note;
     cell.heightTextLabel.text = @"100.0";
     cell.weightTextLabel.text = @"150.0";
     
@@ -104,12 +103,12 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger row = [indexPath row];
-    NSDictionary *pokemonData = _pokemonArray[row];
+    //NSUInteger row = [indexPath row];
+    //Pokemon *pokemonData = _pokemonArray[row];
     
-    DetailViewController *detailViewController = [[DetailViewController alloc] initWithData:pokemonData];
+    //DetailViewController *detailViewController = [[DetailViewController alloc] initWithData:pokemonData];
     
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    //[self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MainViewController init]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_pokemonArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[ContactsManager sharedManager]:ContactsManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pokedexAddressBook">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

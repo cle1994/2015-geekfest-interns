@@ -45,7 +45,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    _pokemonImage.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+//    _pokemonImage.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
 }
 
 - (void)viewDidLoad {
