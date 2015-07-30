@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DA778205-146E-4A03-99E0-996C47B797CD</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Pokedex</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0F7BAEA99ACAA2BEF7A29E210EB49302A32675BB</key>
 		<string>github.com:cle1994/2015-geekfest-interns.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Pokedex/Pokedex.xcodeproj/project.xcworkspace</string>
+	<string>Pokedex/Pokedex.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0F7BAEA99ACAA2BEF7A29E210EB49302A32675BB</key>

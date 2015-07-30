@@ -64,7 +64,7 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    CGRect tableViewRect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height);
+    CGRect tableViewRect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height * 0.6);
     
     _pokemonTableView.frame = tableViewRect;
     _pokemonTableView.backgroundColor = [UIColor whiteColor];
