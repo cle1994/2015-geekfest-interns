@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokemon.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) NSDictionary *pokemonDetail;
+@property (strong, nonatomic) Pokemon *pokemonDetail;
 
-- initWithData:(NSDictionary *)pokemonDetail;
+- initWithData:(Pokemon *)pokemonDetail;
 
 @end

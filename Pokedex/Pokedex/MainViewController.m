@@ -20,6 +20,7 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
 
 @implementation MainViewController {
     UITableView *_pokemonTableView;
+    UIImageView *_buttonsImageView;
 }
 
 - (id)init {
@@ -56,6 +57,9 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     
     UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, @"Your text");
     [self.view addSubview:_pokemonTableView];
+    
+    _buttonsImageView = [[UIImageView alloc] init];
+    [self.view addSubview:_buttonsImageView];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -65,6 +69,12 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     
     _pokemonTableView.frame = tableViewRect;
     _pokemonTableView.backgroundColor = [UIColor whiteColor];
+    
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    _buttonsImageView.frame = CGRectMake(10, self.view.bounds.size.height + 30, self.view.bounds.size.width - 20, bounds.size.height * 0.4 - 20);
+    _buttonsImageView.backgroundColor = [UIColor greenColor];
+    UIImage *imageObject = [UIImage imageNamed:@"pokedexbuttons2.png"];
+    [_buttonsImageView setImage:imageObject];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,21 +104,19 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     Pokemon *pokemonData = _pokemonArray[row];
     cell.textLabel.text = pokemonData.name;
     cell.detailTextLabel.text = pokemonData.type;
-//    cell.heightTextLabel.text = [NSString stringWithFormat: @"%.2f", pokemonData.height];
-//    cell.weightTextLabel.text = [NSString stringWithFormat: @"%.2f", pokemonData.weight];
-    cell.heightTextLabel.text = @"100.0";
-    cell.weightTextLabel.text = @"150.0";
+    cell.heightTextLabel.text = [NSString stringWithFormat: @"%.2f", pokemonData.height];
+    cell.weightTextLabel.text = [NSString stringWithFormat: @"%.2f", pokemonData.weight];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //NSUInteger row = [indexPath row];
-    //Pokemon *pokemonData = _pokemonArray[row];
+    NSUInteger row = [indexPath row];
+    Pokemon *pokemonData = _pokemonArray[row];
     
-    //DetailViewController *detailViewController = [[DetailViewController alloc] initWithData:pokemonData];
+    DetailViewController *detailViewController = [[DetailViewController alloc] initWithData:pokemonData];
     
-    //[self.navigationController pushViewController:detailViewController animated:YES];
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

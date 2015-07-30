@@ -19,6 +19,7 @@
 		B2808D5E1B6AD734002375B6 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = B2808D5D1B6AD734002375B6 /* Images */; };
 		C42B7D761B6AAD7C00CAF672 /* PokemonCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C42B7D751B6AAD7C00CAF672 /* PokemonCellTableViewCell.m */; };
 		C42B7D7B1B6ACB7B00CAF672 /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42B7D7A1B6ACB7B00CAF672 /* BattleViewController.m */; };
+		C42B7D7D1B6ADC4D00CAF672 /* pokedexbuttons2.png in Resources */ = {isa = PBXBuildFile; fileRef = C42B7D7C1B6ADC4D00CAF672 /* pokedexbuttons2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C42B7D751B6AAD7C00CAF672 /* PokemonCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokemonCellTableViewCell.m; sourceTree = "<group>"; };
 		C42B7D791B6ACB7B00CAF672 /* BattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
 		C42B7D7A1B6ACB7B00CAF672 /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
+		C42B7D7C1B6ADC4D00CAF672 /* pokedexbuttons2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokedexbuttons2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		AA91E0B81B6A9A1100A581D7 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				C42B7D7C1B6ADC4D00CAF672 /* pokedexbuttons2.png */,
 				B2808D5D1B6AD734002375B6 /* Images */,
 				AA91E0DA1B6A9C7200A581D7 /* Screens */,
 				5DC64BEC1B6AA22D005F7A79 /* Pokemon.m */,
@@ -235,6 +238,7 @@
 				AA91E0C41B6A9A1100A581D7 /* LaunchScreen.xib in Resources */,
 				B2808D5E1B6AD734002375B6 /* Images in Resources */,
 				AA91E0C11B6A9A1100A581D7 /* Images.xcassets in Resources */,
+				C42B7D7D1B6ADC4D00CAF672 /* pokedexbuttons2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

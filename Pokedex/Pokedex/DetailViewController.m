@@ -21,31 +21,25 @@
     UILabel *_pokemonDescription;
 }
 
-- (id)initWithData:(NSDictionary *)pokemonDetail {
+- (id)initWithData:(Pokemon *)pokemonDetail {
     self = [super init];
     if (self) {
         self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         self.view.backgroundColor = [UIColor whiteColor];
         _pokemonDetail = pokemonDetail;
         
-        _pokemonImage = [[UIImageView alloc] initWithImage:[_pokemonDetail objectForKey:@"image"]];
+        _pokemonImage = [[UIImageView alloc] initWithImage:pokemonDetail.image];
         _pokemonName = [[UILabel alloc] initWithFrame:CGRectZero];
         _pokemonType = [[UILabel alloc] initWithFrame:CGRectZero];
         _pokemonHeight = [[UILabel alloc] initWithFrame:CGRectZero];
         _pokemonWeight = [[UILabel alloc] initWithFrame:CGRectZero];
         _pokemonDescription = [[UILabel alloc] initWithFrame:CGRectZero];
         
-        _pokemonName.text = [_pokemonDetail objectForKey:@"name"];
-        _pokemonType.text = [_pokemonDetail objectForKey:@"type"];
-        _pokemonHeight.text = [_pokemonDetail objectForKey:@"height"];
-        _pokemonWeight.text = [_pokemonDetail objectForKey:@"weight"];
-        _pokemonDescription.text = [_pokemonDetail objectForKey:@"note"];
-        
-//        _pokemonName.text = @"test";
-//        _pokemonType.text = @"test";
-//        _pokemonHeight.text = @"test";
-//        _pokemonWeight.text = @"test";
-//        _pokemonDescription.text = @"test";
+        _pokemonName.text = _pokemonDetail.name;
+        _pokemonType.text = _pokemonDetail.type;
+        _pokemonHeight.text = [NSString stringWithFormat: @"%.2f", _pokemonDetail.height];
+        _pokemonWeight.text = [NSString stringWithFormat: @"%.2f", _pokemonDetail.weight];
+        _pokemonDescription.text = _pokemonDetail.note;
         
         [self.view addSubview:_pokemonImage];
         [self.view addSubview:_pokemonName];
@@ -71,13 +65,6 @@
     _pokemonHeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonType.frame), widthValue * 0.5, heightValue * 0.1);
     _pokemonWeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonHeight.frame), widthValue * 0.5, heightValue * 0.1);
     _pokemonDescription.frame = CGRectMake(xValue, CGRectGetMaxY(_pokemonImage.frame), widthValue, heightValue * 0.5);
-    
-//    _pokemonImage.backgroundColor = [UIColor blueColor];
-//    _pokemonName.backgroundColor = [UIColor greenColor];
-//    _pokemonType.backgroundColor = [UIColor purpleColor];
-//    _pokemonHeight.backgroundColor = [UIColor redColor];
-//    _pokemonWeight.backgroundColor = [UIColor blueColor];
-//    _pokemonDescription.backgroundColor = [UIColor orangeColor];
 }
 
 - (void)viewDidLoad {
