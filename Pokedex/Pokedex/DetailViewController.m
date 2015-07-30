@@ -18,7 +18,7 @@
     UILabel *_pokemonType;
     UILabel *_pokemonHeight;
     UILabel *_pokemonWeight;
-    UILabel *_pokemonDescription;
+    UITextView *_pokemonDescription;
 }
 
 - (id)initWithData:(Pokemon *)pokemonDetail {
@@ -33,13 +33,15 @@
         _pokemonType = [[UILabel alloc] initWithFrame:CGRectZero];
         _pokemonHeight = [[UILabel alloc] initWithFrame:CGRectZero];
         _pokemonWeight = [[UILabel alloc] initWithFrame:CGRectZero];
-        _pokemonDescription = [[UILabel alloc] initWithFrame:CGRectZero];
+        _pokemonDescription = [[UITextView alloc] initWithFrame:CGRectZero];
         
         _pokemonName.text = _pokemonDetail.name;
         _pokemonType.text = _pokemonDetail.type;
         _pokemonHeight.text = [NSString stringWithFormat: @"%.2f", _pokemonDetail.height];
         _pokemonWeight.text = [NSString stringWithFormat: @"%.2f", _pokemonDetail.weight];
         _pokemonDescription.text = _pokemonDetail.note;
+        
+        [_pokemonDescription setFont:[UIFont systemFontOfSize:15]];
         
         [self.view addSubview:_pokemonImage];
         [self.view addSubview:_pokemonName];
@@ -60,11 +62,11 @@
     CGFloat heightValue = self.view.bounds.size.height - navigationBarHeight;
     
     _pokemonImage.frame = CGRectMake(xValue, yValue, widthValue * 0.5, widthValue * 0.5);
-    _pokemonName.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), yValue, widthValue * 0.5, heightValue * 0.2);
-    _pokemonType.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonName.frame), widthValue * 0.5, heightValue * 0.1);
-    _pokemonHeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonType.frame), widthValue * 0.5, heightValue * 0.1);
-    _pokemonWeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonHeight.frame), widthValue * 0.5, heightValue * 0.1);
-    _pokemonDescription.frame = CGRectMake(xValue, CGRectGetMaxY(_pokemonWeight.frame), widthValue, heightValue * 0.5);
+    _pokemonName.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), yValue, widthValue * 0.5, heightValue * 0.15);
+    _pokemonType.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonName.frame), widthValue * 0.5, heightValue * 0.05);
+    _pokemonHeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonType.frame), widthValue * 0.5, heightValue * 0.05);
+    _pokemonWeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonHeight.frame), widthValue * 0.5, heightValue * 0.05);
+    _pokemonDescription.frame = CGRectMake(xValue + 15, CGRectGetMaxY(_pokemonWeight.frame) + 20, widthValue - 30	, heightValue * 0.5);
 }
 
 - (void)viewDidLoad {

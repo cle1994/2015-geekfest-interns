@@ -58,7 +58,7 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, @"Your text");
     [self.view addSubview:_pokemonTableView];
     
-    _buttonsImageView = [[UIImageView alloc] init];
+    _buttonsImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_buttonsImageView];
 }
 
@@ -70,9 +70,11 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     _pokemonTableView.frame = tableViewRect;
     _pokemonTableView.backgroundColor = [UIColor whiteColor];
     
-    CGRect bounds = [[UIScreen mainScreen] bounds];
-    _buttonsImageView.frame = CGRectMake(10, self.view.bounds.size.height + 30, self.view.bounds.size.width - 20, bounds.size.height * 0.4 - 20);
+    _buttonsImageView.frame = CGRectMake(self.view.bounds.origin.x + 20, CGRectGetMaxY(tableViewRect) + 20, self.view.bounds.size.width - 40, self.view.bounds.size.height * 0.3);
+    
     UIImage *imageObject = [UIImage imageNamed:@"pokedexbuttons2.png"];
+    _buttonsImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
     [_buttonsImageView setImage:imageObject];
 }
 
