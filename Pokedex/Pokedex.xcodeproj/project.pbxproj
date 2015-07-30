@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DC64BEA1B6A9BEC005F7A79 /* ContactsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC64BE91B6A9BEC005F7A79 /* ContactsManager.m */; };
+		5DC64BED1B6AA22D005F7A79 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC64BEC1B6AA22D005F7A79 /* Pokemon.m */; };
 		AA91E0BC1B6A9A1100A581D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91E0BB1B6A9A1100A581D7 /* main.m */; };
 		AA91E0BF1B6A9A1100A581D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91E0BE1B6A9A1100A581D7 /* AppDelegate.m */; };
 		AA91E0C11B6A9A1100A581D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA91E0C01B6A9A1100A581D7 /* Images.xcassets */; };
@@ -27,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DC64BE81B6A9B77005F7A79 /* ContactsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsManager.h; sourceTree = "<group>"; };
+		5DC64BE91B6A9BEC005F7A79 /* ContactsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsManager.m; sourceTree = "<group>"; };
+		5DC64BEB1B6AA067005F7A79 /* Pokemon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		5DC64BEC1B6AA22D005F7A79 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 		AA91E0B61B6A9A1100A581D7 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA91E0BA1B6A9A1100A581D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA91E0BB1B6A9A1100A581D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +89,10 @@
 			isa = PBXGroup;
 			children = (
 				AA91E0DA1B6A9C7200A581D7 /* Screens */,
+				5DC64BEB1B6AA067005F7A79 /* Pokemon.h */,
+				5DC64BEC1B6AA22D005F7A79 /* Pokemon.m */,
+				5DC64BE91B6A9BEC005F7A79 /* ContactsManager.m */,
+				5DC64BE81B6A9B77005F7A79 /* ContactsManager.h */,
 				AA91E0BD1B6A9A1100A581D7 /* AppDelegate.h */,
 				AA91E0BE1B6A9A1100A581D7 /* AppDelegate.m */,
 				AA91E0C01B6A9A1100A581D7 /* Images.xcassets */,
@@ -231,7 +241,9 @@
 				AA91E0E71B6A9F9900A581D7 /* ContactListTableViewController.m in Sources */,
 				AA91E0E11B6A9EBD00A581D7 /* MainViewController.m in Sources */,
 				AA91E0BF1B6A9A1100A581D7 /* AppDelegate.m in Sources */,
+				5DC64BED1B6AA22D005F7A79 /* Pokemon.m in Sources */,
 				AA91E0BC1B6A9A1100A581D7 /* main.m in Sources */,
+				5DC64BEA1B6A9BEC005F7A79 /* ContactsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +430,7 @@
 				AA91E0D51B6A9A1200A581D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA91E0D61B6A9A1200A581D7 /* Build configuration list for PBXNativeTarget "PokedexTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				AA91E0D81B6A9A1200A581D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
