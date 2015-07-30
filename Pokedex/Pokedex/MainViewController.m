@@ -56,14 +56,15 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     
     _pokemonTableView.tableFooterView = [[UIView alloc] init];
     
+    self.navigationItem.title = @"Pokedex";
+    
     [self.view addSubview:_pokemonTableView];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    CGSize statusBarSize = [[UIApplication sharedApplication] statusBarFrame].size;
-    CGRect tableViewRect = CGRectMake(self.view.bounds.origin.x, statusBarSize.height, self.view.bounds.size.width, self.view.bounds.size.height - statusBarSize.height);
+    CGRect tableViewRect = CGRectMake(self.view.bounds.origin.x, self.view.bounds.origin.y, self.view.bounds.size.width, self.view.bounds.size.height * 0.6);
     
     _pokemonTableView.frame = tableViewRect;
     _pokemonTableView.backgroundColor = [UIColor whiteColor];
