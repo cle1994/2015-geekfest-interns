@@ -10,4 +10,8 @@
 
 @interface DetailViewController : UIViewController
 
+@property (strong, nonatomic) NSDictionary *pokemonDetail;
+
+- initWithData:(NSDictionary *)pokemonDetail;
+
 @end

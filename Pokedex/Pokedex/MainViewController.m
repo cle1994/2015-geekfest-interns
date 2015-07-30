@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "ContactsManager.h"
 #import "PokemonCellTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -99,6 +100,15 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     cell.weightTextLabel.text = @"150.0";
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger row = [indexPath row];
+    NSDictionary *pokemonData = _pokemonArray[row];
+    
+    DetailViewController *detailViewController = [[DetailViewController alloc] initWithData:pokemonData];
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end
