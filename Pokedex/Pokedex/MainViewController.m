@@ -13,6 +13,8 @@
 
 @end
 
+static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
+
 @implementation MainViewController {
     UITableView *_pokemonTableView;
 }
@@ -41,6 +43,7 @@
     _pokemonTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _pokemonTableView.dataSource = self;
     _pokemonTableView.delegate = self;
+    [_pokemonTableView registerClass:[PokemonCellTableViewCell class] forCellReuseIdentifier:kPokedexCellReuseId];
     
     [self.view addSubview:_pokemonTableView];
 }
