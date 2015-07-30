@@ -62,7 +62,7 @@ NSString *const kContactAccess = @"contacts_access_granted";
     [_deviceAddressBook removeAllObjects];
     [_pokedexAddressBook removeAllObjects];
     
-    NSArray *keys = [NSArray arrayWithObjects:CNContactFamilyNameKey, CNContactGivenNameKey, CNContactImageDataKey, CNContactPhoneNumbersKey, CNContactBirthdayKey, nil];
+    NSArray *keys = [NSArray arrayWithObjects:CNContactFamilyNameKey, CNContactGivenNameKey, CNContactImageDataKey, CNContactPhoneNumbersKey, CNContactBirthdayKey, CNContactNoteKey,CNContactImageDataAvailableKey, nil];
     CNContactFetchRequest *fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
     [_contactStore enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact *contact, BOOL *stop) {
         [_deviceAddressBook addObject:contact];
