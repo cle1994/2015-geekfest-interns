@@ -20,11 +20,20 @@
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _mainViewController = [[MainViewController alloc] init];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_mainViewController];
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:_mainViewController];
     
-    [_window addSubview:navigationController.view];
+    _navigationController.navigationBar.titleTextAttributes = @{
+                                                                NSForegroundColorAttributeName: [UIColor whiteColor]
+                                                                };
+    _navigationController.navigationBar.backgroundColor = [UIColor redColor];
+    _navigationController.navigationBar.barTintColor = [UIColor redColor];
     
-    _window.rootViewController = navigationController;
+   
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [_window addSubview:_navigationController.view];
+    
+    _window.rootViewController = _navigationController;
     [_window makeKeyAndVisible];
     
     [[ContactsManager sharedManager] requestAccessToContacts];
