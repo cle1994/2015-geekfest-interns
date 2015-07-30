@@ -43,7 +43,9 @@
         if (contact.imageDataAvailable) {
             // convert nsdata to uiimage 8 bit
         } else {
-            // assign random pokemon
+            // Assign pokemon image of same type
+            NSString *imageFilename = [NSString stringWithFormat:@"Images/%@.png", self.type];
+            self.image = [UIImage imageNamed:imageFilename];
         }
     }
     return self;
@@ -69,7 +71,7 @@
 
 - (void)setUpBirthdayToTypeDictionary {
     _birthdayToType = [[NSDictionary alloc] initWithObjects:@[@"Normal", @"Fire", @"Water", @"Electric", @"Grass", @"Fighting",
-                                                              @"Ground", @"Flying", @"Psychic", @"Bug", @"Ghost", @"Dragon"]
+                                                              @"Ground", @"Flying", @"Psychic", @"Bug", @"Poison", @"Dragon"]
                                                     forKeys:@[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12]];
 }
 @end
