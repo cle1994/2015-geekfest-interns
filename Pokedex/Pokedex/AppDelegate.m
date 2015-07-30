@@ -20,10 +20,11 @@
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _mainViewController = [[MainViewController alloc] init];
     
-    [_window addSubview:_mainViewController.view];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_mainViewController];
     
-    _window.rootViewController = _mainViewController;
-    _window.backgroundColor = [UIColor redColor];
+    [_window addSubview:navigationController.view];
+    
+    _window.rootViewController = navigationController;
     [_window makeKeyAndVisible];
     
     [[ContactsManager sharedManager] requestAccessToContacts];
