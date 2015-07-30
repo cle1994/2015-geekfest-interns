@@ -37,11 +37,11 @@
             month = [NSString stringWithFormat:@"%ld",(NSInteger)((rand() % 12) + 1)];
         }
         self.type = [_birthdayToType valueForKey:month];
-        if (contact.note) {
-            self.note = contact.note;
-        } else {
+        if ([contact.note isEqualToString:@""]) {
             NSString *description = [_birthdayToDescription valueForKey:month];
             self.note = description;
+        } else {
+            self.note = contact.note;
         }
         
         if (contact.imageDataAvailable) {
