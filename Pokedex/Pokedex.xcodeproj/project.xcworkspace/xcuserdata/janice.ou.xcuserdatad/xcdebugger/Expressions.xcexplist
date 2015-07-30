@@ -6,7 +6,16 @@
          contextName = "-[Pokemon initWithContact:]:Pokemon.m">
          <PersistentStrings>
             <PersistentString
+               value = "self.type">
+            </PersistentString>
+            <PersistentString
                value = "contact.birthday">
+            </PersistentString>
+            <PersistentString
+               value = "self.image">
+            </PersistentString>
+            <PersistentString
+               value = "imageFilename">
             </PersistentString>
             <PersistentString
                value = "contact.birthday.month">
