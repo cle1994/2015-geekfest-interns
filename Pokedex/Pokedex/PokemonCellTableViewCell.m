@@ -34,7 +34,6 @@ static CGFloat const kCellPadding = 10.0;
     CGFloat cellHeightWithPadding = self.bounds.size.height - (kCellPadding * 2);
     
     self.imageView.frame = CGRectMake(0, 0, self.bounds.size.height, self.bounds.size.height);
-    self.imageView.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.5];
     
     CGFloat imageViewOffset = self.imageView.frame.size.width;
     self.textLabel.frame = CGRectMake(imageViewOffset + kCellPadding, kCellPadding / 2, self.bounds.size.width - imageViewOffset - kCellPadding, cellHeightWithPadding * 0.4);

@@ -72,7 +72,6 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
     _buttonsImageView.frame = CGRectMake(10, self.view.bounds.size.height + 30, self.view.bounds.size.width - 20, bounds.size.height * 0.4 - 20);
-    _buttonsImageView.backgroundColor = [UIColor greenColor];
     UIImage *imageObject = [UIImage imageNamed:@"pokedexbuttons2.png"];
     [_buttonsImageView setImage:imageObject];
 }
@@ -102,6 +101,7 @@ static NSString * const kPokedexCellReuseId = @"kPokedexCellReuseId";
     
     NSUInteger row = [indexPath row];
     Pokemon *pokemonData = _pokemonArray[row];
+    cell.imageView.image = pokemonData.image;
     cell.textLabel.text = pokemonData.name;
     cell.detailTextLabel.text = pokemonData.type;
     cell.heightTextLabel.text = [NSString stringWithFormat: @"%.2f", pokemonData.height];

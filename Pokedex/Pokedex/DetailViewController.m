@@ -59,12 +59,12 @@
     CGFloat widthValue = self.view.bounds.size.width;
     CGFloat heightValue = self.view.bounds.size.height - navigationBarHeight;
     
-    _pokemonImage.frame = CGRectMake(xValue, yValue, widthValue * 0.5, heightValue * 0.5);
+    _pokemonImage.frame = CGRectMake(xValue, yValue, widthValue * 0.5, widthValue * 0.5);
     _pokemonName.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), yValue, widthValue * 0.5, heightValue * 0.2);
     _pokemonType.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonName.frame), widthValue * 0.5, heightValue * 0.1);
     _pokemonHeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonType.frame), widthValue * 0.5, heightValue * 0.1);
     _pokemonWeight.frame = CGRectMake(CGRectGetMaxX(_pokemonImage.frame), CGRectGetMaxY(_pokemonHeight.frame), widthValue * 0.5, heightValue * 0.1);
-    _pokemonDescription.frame = CGRectMake(xValue, CGRectGetMaxY(_pokemonImage.frame), widthValue, heightValue * 0.5);
+    _pokemonDescription.frame = CGRectMake(xValue, CGRectGetMaxY(_pokemonWeight.frame), widthValue, heightValue * 0.5);
 }
 
 - (void)viewDidLoad {
