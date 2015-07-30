@@ -27,7 +27,7 @@
     if (self) {
         self.number = [[[ContactsManager sharedManager] deviceAddressBook] indexOfObject:contact];
         self.name = [NSString stringWithFormat:@"%@ %@", contact.givenName, contact.familyName];
-        [self setTypeForBirthday:contact.birthday];
+        self.type = [_birthdayToType valueForKey:[NSString stringWithFormat:@"%ld", contact.birthday.month]];
         [self setHeightAndWeight];
         if (contact.note) {
             self.description = contact.note;
@@ -38,9 +38,6 @@
     return self;
 }
 
-- (void)setTypeForBirthday:(NSDateComponents *)birthday{
-    
-}
 - (void)setHeightAndWeight{
     
 }
